@@ -1,5 +1,7 @@
 The project addresses the challenge of enabling an mobile robot to perceive and understand its environment to autonomously navigate through the shortest path in the maze.
 
+![Screenshot 2024-03-21 173052](https://github.com/AabidPatel/monocular_perception/assets/73630123/d76ddb78-e35c-40ee-8d68-68859f9a6f47)
+
 # Methodolgy
 
 ## Exploration
