@@ -1,8 +1,6 @@
 # Vision Based Maze Solving Robot
 The project addresses the challenge of enabling an mobile robot to perceive and understand its environment to autonomously navigate through the shortest path in the maze.
 
-![Screenshot 2024-03-21 173052](https://github.com/AabidPatel/monocular_perception/assets/73630123/d76ddb78-e35c-40ee-8d68-68859f9a6f47)
-
 ## Methodolgy
 
 ### Exploration
@@ -14,6 +12,7 @@ The robot first creates a database storing each frame taken by the camera while 
 
 Using the ORB feature detection we create an ORB object and using the  detectAndcompute function we extract the descriptors and keypoints of every image in the dataset as part of the first step of the procedure for implementing VLAD. We implement VLAD in another file and import its function in the player.py file. Using these descriptors , we perform K-means where we build 8 clusters based on all the dataset image descriptors. The algorithm tries to partition the dataset into k clusters based on similarity. We use a seed value of 42 (chosen arbitrarily) for reproducing the same results. Using the K-means estimator from the previous step , we compute the visual vocabulary for each image and assign it to one of the clusters based on the similarity between the respective image and the clusters.  This is done by finding the Euclidean distance between each descriptor of the cluster centers and then assigns each descriptor to the nearest center using argmin and stores it as a label. For every image, we compute a vlad vector which is the aggregated difference between their descriptors and their cluster centers and append it to a list for each of the images in the dataset. This how we compute VLAD for the dataset images.
 
+![Screenshot 2024-03-21 173052](https://github.com/AabidPatel/monocular_perception/assets/73630123/d76ddb78-e35c-40ee-8d68-68859f9a6f47)
 
 ### Navigation
 
